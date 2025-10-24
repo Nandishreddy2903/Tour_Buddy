@@ -1,0 +1,22 @@
+.active_page {
+  background-color: #4f46e5;
+  color: white;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: not-allowed;
+}
+
+.spn {
+  background-color: #e5e7eb;
+  color: #1f2937;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.spn:hover {
+  background-color: #4f46e5;
+  color: white;
+  cursor: pointer;
+}
