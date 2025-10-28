@@ -21,19 +21,27 @@ mongoose
 
 // Middleware for CORS and JSON parsing
 const allowedOrigins = [
-  "http://localhost:3000", "http://localhost:5173","https://tour-buddy-b4q3.onrender.com/",
+  "http://localhost:3000",
+  "http://localhost:5173",
+  "https://tour-buddy-ten.vercel.app",
+  "https://tour-buddy-b4q3.onrender.com",
 ];
+
 app.use(
   cors({
     origin: function (origin, callback) {
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
+        console.log("❌ Blocked by CORS:", origin);
         callback(new Error("Not allowed by CORS"));
       }
     },
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
+
 app.use(express.json());
 app.use(cookieParser());
 app.use(bodyParser.json());
